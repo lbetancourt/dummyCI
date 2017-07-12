@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Hello Grails 3.1.7 Majores!</h1>
+  <h1>Hello Grails 3.1.7 Major!</h1>
 </body>
 </html>
