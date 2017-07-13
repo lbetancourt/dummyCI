@@ -45,4 +45,4 @@ deploy:
     - echo $CI_PROJECT_NAME
     - ssh imasd@192.168.100.240 'rm /home/apps/apache-tomcat-8.5.6/apps/ROOT.war'
     - sleep 10
-    - scp $CI_PROJECT_DIR/build/libs/dummy.war imasd@192.168.100.240:/home/apps/apache-tomcat-8.5.6/apps/$CI_PROJECT_NAME.war
+    - scp $CI_PROJECT_DIR/build/libs/$CI_PROJECT_NAME.war imasd@192.168.100.240:/home/apps/apache-tomcat-8.5.6/apps/ROOT.war
