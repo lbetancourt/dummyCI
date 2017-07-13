@@ -3,6 +3,7 @@ buildscript {
         grailsVersion = project.grailsVersion
     }
     repositories {
+        jcenter()
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
     }
@@ -10,10 +11,11 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2"
         classpath "org.grails.plugins:hibernate4:5.0.6"
+        classpath "com.bmuschko:gradle-cargo-plugin:2.2.3"
     }
 }
 
-version "0.1"
+version ""
 group "dummy"
 
 apply plugin:"eclipse"
@@ -22,6 +24,7 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
+apply plugin:"com.bmuschko.cargo"
 
 ext {
     grailsVersion = project.grailsVersion
@@ -69,4 +72,19 @@ task wrapper(type: Wrapper) {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+cargo {
+    containerId ='tomcat8x'
+    port = 80
+    deployable 
+    {
+        context = 'ROOT'
+    }
+    remote 
+    {
+        hostname = '192.168.100.240'
+        username = 'root' 
+        password = 'admin123'
+    }
 }
