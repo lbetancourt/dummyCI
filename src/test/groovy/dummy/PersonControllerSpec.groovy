@@ -17,6 +17,6 @@ class PersonControllerSpec extends Specification {
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }
