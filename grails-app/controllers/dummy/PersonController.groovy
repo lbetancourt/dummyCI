@@ -8,4 +8,8 @@ class PersonController {
     def hello(){
     	render "hello"
     }
+    def test(){
+    	def toto=null
+    	println toto.length()
+    }
 }

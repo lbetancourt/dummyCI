@@ -11,10 +11,12 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2"
         classpath "org.grails.plugins:hibernate4:5.0.6"
-        classpath "com.bmuschko:gradle-cargo-plugin:2.2.3"
+        classpath "com.bmuschko:gradle-cargo-plugin:2.2.3" 
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"       
     }
 }
 
+description = 'Example of SonarQube Scanner for Gradle Usage'
 version ""
 group "dummy"
 
@@ -25,6 +27,7 @@ apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
 apply plugin:"com.bmuschko.cargo"
+apply plugin:"org.sonarqube"
 
 ext {
     grailsVersion = project.grailsVersion
@@ -86,5 +89,17 @@ cargo {
         hostname = '192.168.100.240'
         username = 'root' 
         password = 'admin123'
+    }
+}
+
+sonarqube {
+    properties {
+        property 'sonar.projectKey', 'dummy'
+        property 'sonar.projectName', 'dummy'
+        property 'sonar.projectVersion', '1.0'
+        property 'sonar.sources', 'src/main/groovy,grails-app/services,grails-app/controllers,grails-app/domain,grails-app/utils'
+        property 'sonar.language', 'grvy'
+        property 'sonar.projectName', 'dummy'
+        property 'sonar.groovy.cobertura.reportPath=','target/test-reports/cobertura/coverage.xml'
     }
 }
