@@ -35,6 +35,7 @@ test:
   stage: test
   script:
     - grails test-app
+    - ./gradlew sonarqube -Dsonar.issuesReport.console.enable=true -Dsonar.gitlab.commit_sha=$CI_BUILD_REF -Dsonar.gitlab.ref=$CI_BUILD_REF_NAME
 
 deploy:
   stage: deploy
