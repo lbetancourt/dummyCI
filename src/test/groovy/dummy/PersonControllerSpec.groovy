@@ -16,7 +16,13 @@ class PersonControllerSpec extends Specification {
     }
 
     void "test something"() {
-        expect:"fix me"
-            true == true
+        when:
+        controller.hello()
+        then:
+        response.text == 'hello'
+    }
+
+    void "test finally"(){
+    	
     }
 }
