@@ -65,7 +65,7 @@ dependencies {
     testCompile "org.grails:grails-plugin-testing"
     testCompile "org.grails.plugins:geb"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
-    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"    
 }
 
 task wrapper(type: Wrapper) {
@@ -99,7 +99,6 @@ sonarqube {
         property 'sonar.projectVersion', '1.0'
         property 'sonar.sources', 'src/main/groovy,grails-app/services,grails-app/controllers,grails-app/domain,grails-app/utils'
         property 'sonar.language', 'grvy'
-        property 'sonar.projectName', 'dummy'
-        property 'sonar.groovy.cobertura.reportPath=','target/test-reports/cobertura/coverage.xml'
+        property 'sonar.projectName', 'dummy'        
     }
 }
