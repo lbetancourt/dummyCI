@@ -12,4 +12,8 @@ class PersonController {
     	def toto=null
     	println toto.length()
     }
+    def test2(){
+    	def toto=null
+    	println toto.length()
+    }
 }
