@@ -96,7 +96,7 @@ sonarqube {
     properties {
         property 'sonar.projectKey', 'dummy'        
         property 'sonar.projectVersion', '1.0'
-        property 'sonar.sources', 'src/main/groovy,grails-app/services,grails-app/controllers,grails-app/domain,grails-app/utils'
+        property 'sonar.sources', 'grails-app/services,grails-app/controllers,grails-app/domain,grails-app/utils'
         property 'sonar.language', 'grvy'
         property 'sonar.projectName', 'dummy'        
     }
