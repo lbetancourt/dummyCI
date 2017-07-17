@@ -44,8 +44,8 @@ deploy:
   stage: deploy
   script:
     - grails test war
-    - echo $CI_PROJECT_DIR
-    - echo $CI_PROJECT_NAME
+    #- echo $CI_PROJECT_DIR
+    #- echo $CI_PROJECT_NAME
     - ssh imasd@192.168.100.240 'rm /home/apps/apache-tomcat-8.5.6/apps/ROOT.war'
     - sleep 10
     - scp $CI_PROJECT_DIR/build/libs/$CI_PROJECT_NAME.war imasd@192.168.100.240:/home/apps/apache-tomcat-8.5.6/apps/ROOT.war
